@@ -22,7 +22,7 @@ for j in urls:
            #print(i,type(i))
            test = IPAddress(str(i).strip()).is_private()
            if test == True:
-               print(Fore.GREEN+"[+] Domain "+j.strip()+" resolves to the internal IP: "+i)
+               print(Fore.GREEN+"[+] Domain "+j.strip()+" resolves to the internal IP: "+str(i))
                counter+=1
            else:
                pass
