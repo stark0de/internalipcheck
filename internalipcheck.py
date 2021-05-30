@@ -27,7 +27,7 @@ for j in urls:
            else:
                pass
     except Exception as e:
-       print(e)
+       print("Exception: "+e)
 for j in urls:
     #print(j.strip)
     try:
@@ -41,7 +41,7 @@ for j in urls:
            else:
                pass
     except Exception as e:
-       print(e)
+       pass
 #print(counter)
 if counter == 0:
     print(Fore.RED+"[-] No positive results")
