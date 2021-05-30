@@ -22,7 +22,21 @@ for j in urls:
            #print(i,type(i))
            test = IPAddress(str(i).strip()).is_private()
            if test == True:
-               print(Fore.GREEN+"[+] Domain "+j.strip()+" resolves to the internal IP: "+str(i))
+               print(Fore.GREEN+"[+] Domain "+j.strip()+" resolves to the internal IPv4: "+str(i))
+               counter+=1
+           else:
+               pass
+    except Exception as e:
+       print(e)
+for j in urls:
+    #print(j.strip)
+    try:
+       answers = resolver.query(j.strip(), 'AAAA',lifetime=15)
+       for i in answers:
+           #print(i,type(i))
+           test = IPAddress(str(i).strip()).is_private()
+           if test == True:
+               print(Fore.GREEN+"[+] Domain "+j.strip()+" resolves to the internal IPv6: "+str(i))
                counter+=1
            else:
                pass
